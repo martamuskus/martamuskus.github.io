@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+.content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+}
+
+@media (max-width: 800px) {
+    .hide-on-small {
+        display: none;
+    }
+
+    .buttons_flex {
+        flex-flow: column wrap;
+    }
+}
+
+@media (min-width: 800px) {
+    .change_colour {
+        transition: background-color 0.3s ease;
+    }
+
+    .change_colour:hover {
+        background-color: rgba(214, 136, 176, 0.55);
+    }
+
+    .hide_paragraph {
+        display: none;
+    }
+}
+
+.meta {
+    display: none;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.footer:hover {
+    background-color: rgba(214, 136, 176, 0.55);
+}
+
+.justify-left {
+    justify-content: left;
+}
+
+.justify-right {
+    justify-content: right;
+}
+
+.justify-mid {
+    justify-content: center;
+}
+
+.justify-even {
+    justify-content: space-evenly;
+}
+
+.presentation {
+    padding: 10px;
+}
+
+.styled-input {
+    padding: 4px;
+    border: 1px #ccc;
+    /*background: #E0E7FF;*/
+    background-color: #f1f5f9;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex-container-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-container img {
+    flex-shrink: 0; /*to keep from resizing*/
+    max-width: 100%;
+    height: auto;
+}
+
+.flex-row{
+    gap: 10px;
+}
+
+.flex-row-gap{
+    gap:20px;
+}
+
+/*to slow down the ping*/
+@keyframes ping-slow {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.ping-slow {
+    animation: ping-slow 2s linear infinite;
+}
+
+
+
+/*for the resizable text area*/
+
+.textarea-container {
+    display: grid;
+    font-size: 0.875rem; /* text-sm */
+    position: relative;
+}
+
+/* Make the hidden clone match the textarea sizing */
+.textarea-container::after {
+    content: attr(data-cloned-val) " ";
+    padding: 0.625rem 0.875rem; /* py-2.5 px-3.5 */
+    grid-area: 1/1/2/2;
+    white-space: pre-wrap;
+    visibility: hidden;
+    border: 1px solid transparent;
+}
+
+
+select option {
+    color: black;
+}
+
+/* Base textarea styles */
+.textarea-input {
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    grid-area: 1/1/2/2;
+    padding: 0.625rem 0.875rem; /* py-2.5 px-3.5 */
+    color: #475569; /* text-slate-600 */
+    background-color: #f1f5f9; /* bg-slate-100 */
+    border: 1px solid transparent;
+    border-radius: 0.25rem; /* rounded */
+    appearance: none;
+    outline: none;
+}
+
+/*border when hoover*/
+.textarea-input:hover {
+    border-color: #e2e8f0; /* border-slate-200 */
+}
+
+/*change of colour when hoover*/
+.textarea-input:focus {
+    background-color: white;
+    border-color: #818cf8;
+    box-shadow: 0 0 0 4px #e0e7ff; /* focus:ring-2 focus:ring-indigo-100 */
+}

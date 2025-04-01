@@ -1,0 +1,115 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+.border {
+  border: 1px solid $border-color;
+}
+
+.px-4 {
+  padding-left: $spacing-x;
+  padding-right: $spacing-x;
+}
+
+.py-2 {
+  padding-top: $spacing-y;
+  padding-bottom: $spacing-y;
+}
+
+@mixin padding($x, $y) {
+  padding: $y $x;
+}
+
+a {
+  color: $link-color;
+}
+
+form {
+  background-color: color.scale($background-color, $lightness: -2%);
+  height: auto;
+  color: $text-color;
+  padding: 15px;
+  width: 100%;
+  font-family: $font-main;
+}
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font-main;
+}
+
+.body_margin {
+  @extend body;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-right: 30px
+}
+
+h1 {
+  color: black;
+  font-size: $h1-font;
+  elevation: higher;
+}
+
+.h1_em {@extend h1; font-size: $h1-large-font; margin: 20px}
+
+h2 {
+  color: black;
+  font-size: $h2-font;
+  elevation: higher;
+}
+
+table {
+  @include padding($spacing-x, $spacing-y);
+  width: 100%;
+  height: 80%;
+  border-collapse: collapse;
+  border: 1px solid $border-color;
+
+  th, td {
+    padding: $spacing-unit;
+    border: 1px solid $border-color;
+  }
+
+  th {
+    background-color: darken($background-color, 5%);
+  }
+}
+
+ol {
+  padding: 0;
+  list-style-type: upper-roman;
+
+  li {
+    padding: $spacing-unit;
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+figure {
+  gap: 20px;
+}
+
+
+button {
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+
+  &.button1 { border-radius: 2px; background-color: #aa677c;}
+  &.button2 { border-radius: 4px; background-color: #aa677c;}
+  &.button3 { border-radius: 8px; background-color: #aa677c;}
+  &.button4 { border-radius: 12px; background-color: #aa677c;}
+
+  &.run-button {border-radius: 8px; background-color: #2a7107;}
+
+  &.presentation_button {
+    @extend .button4;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+  }
+}
