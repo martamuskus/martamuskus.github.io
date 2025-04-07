@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<!--info podstawowe i do rozwiniecia historia-->
+
+<html lang="pl">
+<head>
+    <title>SQL</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.min.css" rel="stylesheet">
+    <link href="output.min.css" rel="stylesheet">
+    <script src="scripts.js"></script>
+</head>
+
+<body class="body_margin">
+
+<div class="flex flex-row">
+    <div class="ml 0 flex flex-row">
+        <a href="https://en.wikipedia.org/wiki/SQL"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sql_data_base_with_logo.svg/768px-Sql_data_base_with_logo.svg.png?20231031073357" alt="delphi" width="110" height="110"></a>
+        <h1 class="h1_em container justfy-left">SQL</h1>
+    </div>
+    <div class="flex-grow"></div>
+    <a href="../../" class="mr 0 text-xl">&#127968;</a>
+</div>
+
+<details>
+    <summary>history</summary>
+    <p class="bg-gray-100"> SQL was initially developed at IBM by Donald D. Chamberlin and Raymond F. Boyce after learning about the relational model from Edgar F. Codd in the early 1970s. This version, initially called SEQUEL (Structured English Query Language), was designed to manipulate and retrieve data stored in IBM's original quasirelational database management system, System R, which a group at IBM San Jose Research Laboratory had developed during the 1970s.
+
+        Chamberlin and Boyce's first attempt at a relational database language was SQUARE (Specifying Queries in A Relational Environment), but it was difficult to use due to subscript/superscript notation. After moving to the San Jose Research Laboratory in 1973, they began work on a sequel to SQUARE. The original name SEQUEL, which is widely regarded as a pun on QUEL, the query language of Ingres, was later changed to SQL (dropping the vowels) because "SEQUEL" was a trademark of the UK-based Hawker Siddeley Dynamics Engineering Limited company. The label SQL later became the acronym for Structured Query Language.
+
+        After testing SQL at customer test sites to determine the usefulness and practicality of the system, IBM began developing commercial products based on their System R prototype, including System/38, SQL/DS, and IBM Db2, which were commercially available in 1979, 1981, and 1983, respectively.
+
+        In the late 1970s, Relational Software, Inc. (now Oracle Corporation) saw the potential of the concepts described by Codd, Chamberlin, and Boyce, and developed their own SQL-based RDBMS with aspirations of selling it to the U.S. Navy, Central Intelligence Agency, and other U.S. government agencies. In June 1979, Relational Software introduced one of the first commercially available implementations of SQL, Oracle V2 (Version2) for VAX computers.
+
+        By 1986, ANSI and ISO standard groups officially adopted the standard "Database Language SQL" language definition. New versions of the standard were published in 1989, 1992, 1996, 1999, 2003, 2006, 2008, 2011, 2016 and most recently, 2023.
+        <a href="https://en.wikipedia.org/wiki/SQL"><br>Wikipedia</a>
+    </p>
+</details>
+<div class="flex flex-row-gap">
+    <div class="w-50">
+        <ol type="I" class="text-teal-600/100">
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Frameworks</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://hibernate.org/">Hibernate</a></li>
+                    <li class="text-teal-600/75"><a href="https://www.sqlalchemy.org/">SQLAlchemy</a></li>
+                    <li class="text-teal-600/75"><a href="https://learn.microsoft.com/en-us/ef/">Entity</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Libraries</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://www.pgadmin.org/">pgAdmin</a></li>
+                    <li class="text-teal-600/75"><a href="https://www.sqlite.org/">SQLite3</a></li>
+                    <li class="text-teal-600/75"><a href="https://www.mysql.com/products/connector/">MySQL Connector</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Tools</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://dbeaver.io/">DBeaver</a></li>
+                    <li class="text-teal-600/75"><a href="https://www.heidisql.com/">HeidiSQL</a></li>
+                    <li class="text-teal-600/75"><a href="https://www.jetbrains.com/datagrip/">DataGrip</a></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <article>
+        <h1>Basic overview</h1>
+        <h2>Synthax</h2>
+        <p>
+            The SQL language is subdivided into several language elements, including:
+
+            Clauses, which are constituent components of statements and queries. (In some cases, these are optional.)
+            Expressions, which can produce either scalar values, or tables consisting of columns and rows of data
+            Predicates, which specify conditions that can be evaluated to SQL three-valued logic (3VL) (true/false/unknown) or Boolean truth values and are used to limit the effects of statements and queries, or to change program flow.
+            Queries, which retrieve the data based on specific criteria. This is an important element of SQL.
+            Statements, which may have a persistent effect on schemata and data, or may control transactions, program flow, connections, sessions, or diagnostics.
+            SQL statements also include the semicolon (";") statement terminator. Though not required on every platform, it is defined as a standard part of the SQL grammar.
+            Insignificant whitespace is generally ignored in SQL statements and queries, making it easier to format SQL code for readability
+        </p><br>
+        <h2>Procedural extensions</h2>
+        <p>
+            SQL is designed for a specific purpose: to query data contained in a relational database. SQL is a set-based, declarative programming language, not an imperative programming language like C or BASIC. However, extensions to Standard SQL add procedural programming language functionality, such as control-of-flow constructs.
+
+            In addition to the standard SQL/PSM extensions and proprietary SQL extensions, procedural and object-oriented programmability is available on many SQL platforms via DBMS integration with other languages. The SQL standard defines SQL/JRT extensions (SQL Routines and Types for the Java Programming Language) to support Java code in SQL databases. Microsoft SQL Server 2005 uses the SQLCLR (SQL Server Common Language Runtime) to host managed .NET assemblies in the database, while prior versions of SQL Server were restricted to unmanaged extended stored procedures primarily written in C. PostgreSQL lets users write functions in a wide variety of languages—including Perl, Python, Tcl, JavaScript (PL/V8) and C
+        </p><br>
+        <h2>Data Types</h2>
+        <p>
+            The SQL standard defines three kinds of data types (chapter 4.1.1 of SQL/Foundation):
+
+            <br>1.Predefined data types
+            <br>2.Constructed types
+            <br>3.User-defined types.
+            <br>Constructed types are one of ARRAY, MULTISET, REF(erence), or ROW. User-defined types are comparable to classes in object-oriented language with their own constructors, observers, mutators, methods, inheritance, overloading, overwriting, interfaces, and so on. Predefined data types are intrinsically supported by the implementation.
+        </p>
+            <h3><strong>Predefined data types:</strong></h3>
+            <h3>Character types:</h3>
+        <p>
+            Character (CHAR),
+            Character varying (VARCHAR),
+            Character large object (CLOB),
+            National character types,
+            National character (NCHAR),
+            National character varying (NCHAR VARYING),
+            National character large object (NCLOB)
+        </p>
+            <h3>Binary types:</h3>
+        <p>
+            Binary (BINARY),
+            Binary varying (VARBINARY),
+            Binary large object (BLOB)
+        </p>
+            <h3>Numeric types:</h3>
+        <p>
+            Exact numeric types (NUMERIC, DECIMAL, SMALLINT, INTEGER, BIGINT),
+            Approximate numeric types (FLOAT, REAL, DOUBLE PRECISION),
+            Decimal floating-point type (DECFLOAT),
+            Datetime types (DATE, TIME, TIMESTAMP)
+        </p>
+        <br>
+    </article>
+</div>
+
+<div class="flex w-full">
+    <a href="../go" class="ml 0">&larr;  Go</a>
+    <div class="flex-grow"></div>
+    <a href="../visualbasic" class="mr 0">Visual Basic  &rarr;</a>
+</div>
+
+</body>
+</html>

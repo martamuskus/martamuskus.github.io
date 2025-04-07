@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<!--info podstawowe i do rozwiniecia historia-->
+
+<html lang="pl">
+<head>
+    <title>Java</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.min.css" rel="stylesheet">
+    <link href="output.min.css" rel="stylesheet">
+    <script src="scripts.js"></script>
+</head>
+
+<body class="body_margin">
+
+<div class="flex flex-row">
+    <div class="ml 0 flex flex-row">
+        <a href="https://en.wikipedia.org/wiki/Java_(programming_language)"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/182px-Java_programming_language_logo.svg.png" alt="python" width="60" height="60"></a>
+        <h1 class="h1_em container justfy-left">Java</h1>
+    </div>
+    <div class="flex-grow"></div>
+    <a href="../../" class="mr 0 text-xl">&#127968;</a>
+</div>
+
+<details>
+    <summary>history</summary>
+    <p class="bg-gray-100"> Java was created by James Gosling, Mike Sheridan, and Patrick Naughton in 1991, initially for interactive TV but later adapted for broader use. Originally named Oak, then Green, it was finally called Java after Indonesian coffee. Designed with C/C++-style syntax, it became widely adopted for its write once, run anywhere (WORA) functionality.
+
+        Sun Microsystems released Java 1.0 in 1996, featuring security controls and cross-platform compatibility. Java quickly gained popularity, especially in web browsers running Java applets. Java 2 (J2SE 1.2, 1998–99) introduced specialized versions: J2EE (enterprise), J2ME (mobile), and J2SE (desktop). In 2006, these were rebranded as Java EE, Java ME, and Java SE.
+
+        Sun initially sought ISO standardization but withdrew, maintaining Java through the Java Community Process. Despite being proprietary, Sun offered free implementations and later open-sourced the JVM under GPL-2.0 in 2006–07.
+
+        After Oracle acquired Sun (2009–10), it positioned itself as Java’s steward but sued Google over Android’s Java use. In 2010, Gosling left Oracle. In 2016, Oracle discontinued the Java browser plugin. Today, Java runs on diverse platforms, from laptops to supercomputers, with Oracle recommending the removal of outdated versions due to security risks.
+        <a href="https://en.wikipedia.org/wiki/Java_(programming_language)"><br>Wikipedia</a>
+    </p>
+</details>
+<div class="flex flex-row-gap">
+    <div class="w-50">
+        <ol type="I" class="text-teal-600/100">
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Frameworks</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://spring.io/projects/spring-boot">Spring</a></li>
+                    <li class="text-teal-600/75"><a href="https://www.apache.org/">Apache</a></li>
+                    <li class="text-teal-600/75"><a href="https://hibernate.org/">Hibernate</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Libraries</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://junit.org/junit5/">JUnit</a></li>
+                    <li class="text-teal-600/75"><a href="https://commons.apache.org/">Apache Commons</a></li>
+                    <li class="text-teal-600/75"><a href="https://site.mockito.org/">Mockito</a></li>
+                    <li class="text-teal-600/75"><a href="https://github.com/FasterXML/jackson">Jackson</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Tools</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://maven.apache.org/">Maven</a></li>
+                    <li class="text-teal-600/75"><a href="https://gradle.org/">Gradle</a></li>
+                    <li class="text-teal-600/75"><a href="https://visualvm.github.io/">JVisualVM</a></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <article>
+        <h1>Basic overview</h1>
+        <h2>Java JVM</h2>
+        <p>
+            One design goal of Java is portability, which means that programs written for the Java platform must run similarly on any combination of hardware and operating system with adequate run time support. This is achieved by compiling the Java language code to an intermediate representation called Java bytecode, instead of directly to architecture-specific machine code. Java bytecode instructions are analogous to machine code, but they are intended to be executed by a virtual machine (VM) written specifically for the host hardware. End-users commonly use a Java Runtime Environment (JRE) installed on their device for standalone Java applications or a web browser for Java applets.
+
+            Standard libraries provide a generic way to access host-specific features such as graphics, threading, and networking.
+
+            The use of universal bytecode makes porting simple. However, the overhead of interpreting bytecode into machine instructions made interpreted programs almost always run more slowly than native executables. Just-in-time (JIT) compilers that compile byte-codes to machine code during runtime were introduced from an early stage. Java's Hotspot compiler is actually two compilers in one; and with GraalVM (included in e.g. Java 11, but removed as of Java 16) allowing tiered compilation. Java itself is platform-independent and is adapted to the particular platform it is to run on by a Java virtual machine (JVM), which translates the Java bytecode into the platform's machine language.
+        </p><br>
+        <h2>Automatic Memory Management</h2>
+        <p>
+            Java uses an automatic garbage collector to manage memory in the object lifecycle. The programmer determines when objects are created, and the Java runtime is responsible for recovering the memory once objects are no longer in use. Once no references to an object remain, the unreachable memory becomes eligible to be freed automatically by the garbage collector. Something similar to a memory leak may still occur if a programmer's code holds a reference to an object that is no longer needed, typically when objects that are no longer needed are stored in containers that are still in use. If methods for a non-existent object are called, a null pointer exception is thrown.
+        </p><br>
+        <h2>Synthax</h2>
+        <p>
+            The syntax of Java is largely influenced by C++ and C. Unlike C++, which combines the syntax for structured, generic, and object-oriented programming, Java was built almost exclusively as an object-oriented language. All code is written inside classes, and every data item is an object, with the exception of the primitive data types, (i.e. integers, floating-point numbers, boolean values, and characters), which are not objects for performance reasons. Java reuses some popular aspects of C++ (such as the printf method).
+
+            Unlike C++, Java does not support operator overloading or multiple inheritance for classes, though multiple inheritance is supported for interfaces.
+
+            Java uses comments similar to those of C++. There are three different styles of comments: a single line style marked with two slashes (//), a multiple line style opened with /* and closed with */, and the Javadoc commenting style opened with /** and closed with */. The Javadoc style of commenting allows the user to run the Javadoc executable to create documentation for the program and can be read by some integrated development environments (IDEs) such as Eclipse to allow developers to access documentation within the IDE.
+        </p><br>
+    </article>
+</div>
+
+<div class="flex flex-row">
+    <h2>Try coding yourself!</h2>
+    <button onclick="run_code()" type="button" class="run-button" id="runButton">&#9658; Run</button>
+    <input type="text" id="language" class="meta" value="java">
+</div>
+<div class="textarea-container">
+    <textarea
+            class="textarea-input"
+            name="message"
+            id="code"
+            rows="2"
+            oninput="this.parentNode.dataset.clonedVal = this.value"
+            placeholder="Enter your code..."
+            required></textarea></div>
+<h3>Output:</h3>
+<pre id="output">Results will appear here...</pre><br>
+
+<div class="flex w-full">
+    <a href="../cplusplus" class="ml 0">&larr;  C++</a>
+    <div class="flex-grow"></div>
+    <a href="../c" class="mr 0">C  &rarr;</a>
+</div>
+
+
+</body>
+</html>

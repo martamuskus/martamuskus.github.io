@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<!--info podstawowe i do rozwiniecia historia-->
+
+<html lang="pl">
+<head>
+    <title>Go</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.min.css" rel="stylesheet">
+    <link href="output.min.css" rel="stylesheet">
+    <script src="scripts.js"></script>
+</head>
+
+<body class="body_margin">
+
+<div class="flex flex-row">
+    <div class="ml 0 flex flex-row">
+        <a href="https://en.wikipedia.org/wiki/Go_(programming_language)"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1920px-Go_Logo_Blue.svg.png" alt="go" width="110" height="110"></a>
+        <h1 class="h1_em container justfy-left">Go</h1>
+    </div>
+    <div class="flex-grow"></div>
+    <a href="../../" class="mr 0 text-xl">&#127968;</a>
+</div>
+
+<details>
+    <summary>history</summary>
+    <p class="bg-gray-100"> Go was designed at Google in 2007 to improve programming productivity in an era of multicore, networked machines and large codebases. The designers wanted to address criticisms of other languages in use at Google, but keep their useful characteristics:
+
+        <br>*Static typing and run-time efficiency (like C)
+        <br>*Readability and usability (like Python)
+        <br>*High-performance networking and multiprocessing
+        <br>Its designers were primarily motivated by their shared dislike of C++.
+
+        Go was publicly announced in November 2009, and version 1.0 was released in March 2012. Go is widely used in production at Google and in many other organizations and open-source projects.
+
+        In retrospect the Go authors judged Go to be successful due to the overall engineering work around the language, including the runtime support for the language's concurrency feature.
+
+        Although the design of most languages concentrates on innovations in syntax, semantics, or typing, Go is focused on the software development process itself. ... The principal unusual property of the language itself—concurrency—addressed problems that arose with the proliferation of multicore CPUs in the 2010s. But more significant was the early work that established fundamentals for packaging, dependencies, build, test, deployment, and other workaday tasks of the software development world, aspects that are not usually foremost in language design.
+        <a href="https://en.wikipedia.org/wiki/Go_(programming_language)"><br>Wikipedia</a>
+    </p>
+</details>
+<div class="flex flex-row-gap">
+    <div class="w-50">
+        <ol type="I" class="text-teal-600/100">
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Frameworks</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://gin-gonic.com/">Gin</a></li>
+                    <li class="text-teal-600/75"><a href="https://echo.labstack.com/">Echo</a></li>
+                    <li class="text-teal-600/75"><a href="https://github.com/beego/beego">Beego</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Libraries</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://gorm.io/">GORM</a></li>
+                    <li class="text-teal-600/75"><a href="https://cobra.dev/">Cobra</a></li>
+                    <li class="text-teal-600/75"><a href="https://github.com/sirupsen/logrus">Logrus</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Tools</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://delvetool.com/">Delve</a></li>
+                    <li class="text-teal-600/75"><a href="https://github.com/goreleaser/goreleaser">GoReleaser</a></li>
+                    <li class="text-teal-600/75"><a href="https://pkg.go.dev/golang.org/x/tools/gopls">gopls</a></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <article>
+        <h1>Basic overview</h1>
+        <h2>Synthax</h2>
+        <p>
+            Go's syntax includes changes from C aimed at keeping code concise and readable. A combined declaration/initialization operator was introduced that allows the programmer to write i := 3 or s := "Hello, world!", without specifying the types of variables used. This contrasts with C's int i = 3; and const char *s = "Hello, world!";. Go also removes the requirement to use parentheses in if statement conditions.
+
+            Semicolons still terminate statements;[a] but are implicit when the end of a line occurs.[b]
+
+            Methods may return multiple values, and returning a result, err pair is the conventional way a method indicates an error to its caller in Go.[c] Go adds literal syntaxes for initializing struct parameters by name and for initializing maps and slices. As an alternative to C's three-statement for loop, Go's range expressions allow concise iteration over arrays, slices, strings, maps, and channels.
+
+            <br>fmt.Println("Hello World!") is a statement.<br>
+
+            In Go, statements are separated by ending a line (hitting the Enter key) or by a semicolon ";".
+
+            Hitting the Enter key adds ";" to the end of the line implicitly (does not show up in the source code).
+
+            The left curly bracket { cannot come at the start of a line.
+        </p><br>
+        <h2>Types</h2>
+        <p>
+            Go has built-in types like numeric (byte, int64, float32), Booleans, and immutable strings. Operators handle string concatenation, comparison, and UTF-8 encoding. Structs define record types. Arrays have fixed sizes, while slices (dynamic arrays) manage length and capacity dynamically.
+
+            Pointers exist for all types (*T), but pointer arithmetic is restricted to unsafe.Pointer. Maps (map[K]V) provide key-value storage without performance guarantees. Channels (chan T) enable concurrency.
+
+            Go's nominal type system allows defining distinct named types. Type conversions must be explicit. Functions (func) specify parameters and return types. Named types can have methods but no separate method type.
+
+            Interfaces enable polymorphism via structural typing, replacing class inheritance. A type satisfies an interface if it implements required methods. Interfaces can embed others. The empty interface{} can hold any type, similar to void* in C but with runtime type checks.
+
+            Go supports type assertions and type switches for interface conversions. The reflect package enables dynamic type inspection. Interface values store a pointer to data and type information, and are nil if uninitialized.
+        </p><br>
+        <h2>Generic Code</h2>
+        <p>
+            Since version 1.18, Go supports generic code using parameterized types.
+
+            Functions and types now have the ability to be generic using type parameters. These type parameters are specified within square brackets, right after the function or type name. The compiler transforms the generic function or type into non-generic by substituting type arguments for the type parameters provided, either explicitly by the user or type inference by the compiler. This transformation process is referred to as type instantiation.
+
+            Interfaces now can define a set of types (known as type set) using | (Union) operator, as well as a set of methods. These changes were made to support type constraints in generics code. For a generic function or type, a constraint can be thought of as the type of the type argument: a meta-type. This new ~T syntax will be the first use of ~ as a token in Go. ~T means the set of all types whose underlying type is T
+        </p><br>
+    </article>
+</div>
+
+<div class="flex flex-row">
+    <h2>Try coding yourself!</h2>
+    <button onclick="run_code()" type="button" class="run-button" id="runButton">&#9658; Run</button>
+    <input type="text" id="language" class="meta" value="go">
+</div>
+<div class="textarea-container">
+    <textarea
+            class="textarea-input"
+            name="message"
+            id="code"
+            rows="2"
+            oninput="this.parentNode.dataset.clonedVal = this.value"
+            placeholder="Enter your code..."
+            required></textarea></div>
+<h3>Output:</h3>
+<pre id="output">Results will appear here...</pre><br>
+
+<div class="flex w-full">
+    <a href="../javascript" class="ml 0">&larr;  Java Script</a>
+    <div class="flex-grow"></div>
+    <a href="../visualbasic" class="mr 0">Visual Basic  &rarr;</a>
+</div>
+
+</body>
+</html>

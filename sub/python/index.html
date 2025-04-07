@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+    <title>Python</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="../../shared/styles.css" rel="stylesheet">
+    <link href="styles.min.css" rel="stylesheet">
+    <link href="output.min.css" rel="stylesheet">
+    <script src="scripts.js"></script>
+</head>
+
+<body class="body_margin">
+
+<div class="flex flex-row">
+    <div class="ml 0 flex flex-row">
+        <a href="https://en.wikipedia.org/wiki/Python_(programming_language)"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/225px-Python-logo-notext.svg.png" alt="python" width="100" height="100"></a>
+        <h1 class="h1_em container justfy-left">Python</h1>
+    </div>
+    <div class="flex-grow"></div>
+    <a href="../../" class="mr 0 text-xl">&#127968;</a>
+</div>
+
+ <details>
+     <summary>history</summary>
+     <p class="bg-gray-100">Python, created by Guido van Rossum at CWI in the late 1980s as a successor to ABC, began implementation in December 1989. Van Rossum led the project until July 2018, when he stepped down as Python's "benevolent dictator for life" (BDFL). In 2019, a five-member Steering Council took over. The language's name comes from Monty Python's Flying Circus.
+
+         Python 2.0 (released in 2000) introduced list comprehensions, garbage collection, and Unicode support. Python 2.7, initially set to retire in 2015, was extended to 2020 due to compatibility concerns. It no longer receives updates, but PyPy continues limited Python 2 support.
+
+         Python 3.0 arrived in 2008 with syntax changes. Each subsequent release has refined the language, dropping outdated modules and evolving semantics. Python 3.13, the latest stable release (as of March 2025), has full support, while Python 3.12 enters limited bug-fix updates in April 2025. Python 3.9 is the oldest still receiving security updates. Starting with Python 3.13, full support lasts two years, followed by three years of security updates.
+         <a href="https://en.wikipedia.org/wiki/Python_(programming_language)"><br>Wikipedia</a>
+     </p>
+ </details>
+ <div class="flex flex-row-gap">
+ <div class="w-50">
+ <ol type="I" class="text-teal-600/100">
+     <li class="text-teal-600/100">
+         <div class="text-teal-600/100"><strong>Frameworks</strong></div>
+         <ul>
+             <li class="text-teal-600/75"><a href="https://www.djangoproject.com/">Django</a></li>
+             <li class="text-teal-600/75"><a href="https://flask.palletsprojects.com/en/stable/">Flask</a></li>
+             <li class="text-teal-600/75"><a href="https://bottlepy.org/docs/dev/">Bottle</a></li>
+         </ul>
+     </li>
+     <li class="text-teal-600/100">
+         <div class="text-teal-600/100"><strong>Libraries</strong></div>
+         <ul>
+             <li class="text-teal-600/75"><a href="https://pandas.pydata.org/">Pandas</a></li>
+             <li class="text-teal-600/75"><a href="https://numpy.org/">Numpy</a></li>
+             <li class="text-teal-600/75"><a href="https://matplotlib.org/">Matplotlib</a></li>
+             <li class="text-teal-600/75"><a href="https://scikit-learn.org/stable/">Scikit-learn</a></li>
+             <li class="text-teal-600/75"><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful soup</a></li>
+         </ul>
+     </li>
+     <li class="text-teal-600/100">
+         <div class="text-teal-600/100"><strong>Tools</strong></div>
+         <ul>
+             <li class="text-teal-600/75"><a href="https://pypi.org/project/pip/">Pip</a></li>
+             <li class="text-teal-600/75"><a href="https://www.selenium.dev/">Selenium</a></li>
+             <li class="text-teal-600/75"><a href="https://jupyter.org/">Jupyter Notebook</a></li>
+         </ul>
+     </li>
+ </ol>
+ </div>
+ <article>
+     <h1>Basic overview</h1>
+     <h2>Indentation</h2>
+     <p>
+         Python uses whitespace indentation, rather than curly brackets or keywords, to delimit blocks. An increase in indentation comes after certain statements; a decrease in indentation signifies the end of the current block. Thus, the program's visual structure accurately represents its semantic structure. This feature is sometimes termed the off-side rule. Some other languages use indentation this way; but in most, indentation has no semantic meaning. The recommended indent size is four spaces.
+     </p><br>
+     <h2>Statements and control flow</h2>
+     <p>
+         Python's statements include:
+
+         <br>The <strong>assignment</strong> statement, using a single equals sign =
+         <br>The <strong>if</strong> statement, which conditionally executes a block of code, along with else and elif (a contraction of else if)
+         <br>The <strong>for</strong> statement, which iterates over an iterable object, capturing each element to a local variable for use by the attached block
+         <br>The <strong>while</strong> statement,which executes a block of code as long as its condition is true
+         <br>The <strong>try</strong> statement, which allows exceptions raised in its attached code block to be caught and handled by except clauses (or new syntax except* in Python 3.11 for exception groups ); it also ensures that clean-up code in a finally block is always run regardless of how the block exits
+         <br>The <strong>raise</strong> statement, used to raise a specified exception or re-raise a caught exception
+         <br>The <strong>class</strong> statement, which executes a block of code and attaches its local namespace to a class, for use in object-oriented programming
+         <br>The <strong>def</strong> statement, which defines a function or method
+         <br>The <strong>with</strong> statement, which encloses a code block within a context manager (for example, acquiring a lock before it is run, then releasing the lock; or opening and closing a file), allowing resource-acquisition-is-initialization (RAII)-like behavior and replacing a common try/finally idiom
+         <br>The <strong>break</strong> statement, which exits a loop
+         <br>The <strong>continue</strong> statement, which skips the rest of the current iteration and continues with the next
+         <br>The <strong>del</strong> statement, which removes a variable—deleting the reference from the name to the value, and producing an error if the variable is referred to before it is redefined
+         <br>The <strong>pass</strong> statement, serving as a NOP, syntactically needed to create an empty code block
+         <br>The <strong>assert</strong> statement, used in debugging to check for conditions that should apply
+         <br>The <strong>yield</strong> statement, which returns a value from a generator function (and also an operator); used to implement coroutines
+         <br>The <strong>return</strong> statement, used to return a value from a function
+         <br>The <strong>import</strong> and from statements, used to import modules whose functions or variables can be used in the current program
+         <br>The <strong>match</strong> and case statements, an analog of the switch statement construct, that compares an expression against one or more cases as a control-of-flow measure.
+
+     </p><br>
+     <h2>Methods</h2>
+     <p>
+         Methods on objects are functions attached to the object's class; the syntax instance.method(argument) is, for normal methods and functions, syntactic sugar for Class.method(instance, argument). Python methods have an explicit self parameter to access instance data, in contrast to the implicit self (or this) in some other object-oriented programming languages (e.g., C++, Java, Objective-C, Ruby). Python also provides methods, often called dunder methods (due to their names beginning and ending with double-underscores), to allow user-defined classes to modify how they are handled by native operations including length, comparison, in arithmetic operations and type conversion.
+     </p><br>
+ </article>
+ </div>
+
+<div class="flex flex-row">
+    <h2>Try coding yourself!</h2>
+    <input type="text" id="language" class="meta" value="python3">
+    <button onclick="run_code()" type="button" class="run-button" id="runButton">&#9658; Run</button>
+</div>
+<div class="textarea-container">
+    <textarea
+            class="textarea-input"
+            name="message"
+            id="code"
+            rows="2"
+            oninput="this.parentNode.dataset.clonedVal = this.value"
+            placeholder="Enter your code..."
+            required></textarea></div>
+<h3>Output:</h3>
+<pre id="output">Results will appear here...</pre>
+
+ <a href="../cplusplus" class=" container justify-right"><p>C++  &rarr;</p></a>
+</body>
+</html>

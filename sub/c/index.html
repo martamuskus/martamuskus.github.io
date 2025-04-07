@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<!--info podstawowe i do rozwiniecia historia-->
+
+<html lang="pl">
+<head>
+    <title>C</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.min.css" rel="stylesheet">
+    <link href="output.min.css" rel="stylesheet">
+    <script src="scripts.js"></script>	
+</head>
+
+<body class="body_margin">
+
+<div class="flex flex-row">
+    <div class="ml 0 flex flex-row">
+        <a href="https://en.wikipedia.org/wiki/C_(programming_language)" class="ml 0"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/380px-C_Programming_Language.svg.png" alt="c" width="100" height="100"></a>
+        <h1 class="h1_em container justfy-left">C language</h1>
+    </div>
+    <div class="flex-grow"></div>
+    <a href="../../" class="mr 0 text-xl">&#127968;</a>
+</div>
+
+<details>
+    <summary>history</summary>
+    <p class="bg-gray-100"> C was developed in the early 1970s by Dennis Ritchie at Bell Labs as an evolution of the B language, which itself was derived from BCPL. It was designed to provide low-level memory access while maintaining portability across different systems. Initially used to rewrite the UNIX operating system, C quickly became the foundation of modern computing due to its efficiency and flexibility.
+
+        The first standardized version, K&amp;R C, was introduced in 1978 with the publication of The C Programming Language by Brian Kernighan and Dennis Ritchie. In 1983, the American National Standards Institute (ANSI) formed a committee to create a more consistent version, leading to ANSI C (C89) in 1989, later adopted as ISO C (C90).
+
+        Subsequent revisions, including C99 and C11, introduced features like inline functions, variable-length arrays, and multi-threading support, keeping C relevant in evolving software development landscapes. C remains widely used in system programming, embedded systems, and high-performance computing, influencing languages like C++, Java, and Rust.
+        <a href="https://en.wikipedia.org/wiki/C_(programming_language)"><br>Wikipedia</a>
+    </p>
+</details>
+<div class="flex flex-row-gap">
+    <div class="w-50">
+        <ol type="I" class="text-teal-600/100">
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Frameworks</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://www.arm.com/technologies/cmsis">CMSIS</a></li>
+                    <li class="text-teal-600/75"><a href="https://www.libsdl.org/">SDL2</a></li>
+                    <li class="text-teal-600/75"><a href="https://valgrind.org/">Valgrind</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Libraries</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://docs.gtk.org/glib/">GLib</a></li>
+                    <li class="text-teal-600/75"><a href="https://www.openmp.org/">OpenMP</a></li>
+                    <li class="text-teal-600/75"><a href="https://curl.se/libcurl/">libcurl</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Tools</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://gcc.gnu.org/">GCC</a></li>
+                    <li class="text-teal-600/75"><a href="https://clang.llvm.org/">Clang</a></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <article>
+        <h1>Basic overview</h1>
+        <h2>Synthax</h2>
+        <p>
+            C has a formal grammar specified by the C standard. Line endings are generally not significant in C; however, line boundaries do have significance during the preprocessing phase. Comments may appear either between the delimiters /* and */, or (since C99) following // until the end of the line. Comments delimited by /* and */ do not nest, and these sequences of characters are not interpreted as comment delimiters if they appear inside string or character literals.
+
+            C source files contain declarations and function definitions. Function definitions, in turn, contain declarations and statements. Declarations either define new types using keywords such as struct, union, and enum, or assign types to and perhaps reserve storage for new variables, usually by writing the type followed by the variable name. Keywords such as char and int specify built-in types. Sections of code are enclosed in braces ({ and }, sometimes called "curly brackets") to limit the scope of declarations and to act as a single statement for control structures.
+
+            As an imperative language, C uses statements to specify actions. The most common statement is an expression statement, consisting of an expression to be evaluated, followed by a semicolon; as a side effect of the evaluation, functions may be called and variables assigned new values. To modify the normal sequential execution of statements, C provides several control-flow statements identified by reserved keywords. Structured programming is supported by if ... else conditional execution and by do ... while, while, and for iterative execution (looping). The for statement has separate initialization, testing, and reinitialization expressions, any or all of which can be omitted. break and continue can be used within the loop. Break is used to leave the innermost enclosing loop statement and continue is used to skip to its reinitialisation. There is also a non-structured goto statement which branches directly to the designated label within the function. switch selects a case to be executed based on the value of an integer expression. Different from many other languages, control-flow will fall through to the next case unless terminated by a break.
+        </p><br>
+        <h2>Memory Management</h2>
+        <p>
+            One of the most important functions of a programming language is to provide facilities for managing memory and the objects that are stored in memory. C provides three principal ways to allocate memory for objects:
+
+            <br>1. Static memory allocation: space for the object is provided in the binary at compile-time; these objects have an extent (or lifetime) as long as the binary which contains them is loaded into memory.
+            <br>2. Automatic memory allocation: temporary objects can be stored on the stack, and this space is automatically freed and reusable after the block in which they are declared is exited.
+            <br>3. Dynamic memory allocation: blocks of memory of arbitrary size can be requested at run-time using library functions such as malloc from a region of memory called the heap; these blocks persist until subsequently freed for reuse by calling the library function realloc or free.
+            <br>These three approaches are appropriate in different situations and have various trade-offs. For example, static memory allocation has little allocation overhead, automatic allocation may involve slightly more overhead, and dynamic memory allocation can potentially have a great deal of overhead for both allocation and deallocation. The persistent nature of static objects is useful for maintaining state information across function calls, automatic allocation is easy to use but stack space is typically much more limited and transient than either static memory or heap space, and dynamic memory allocation allows convenient allocation of objects whose size is known only at run-time. Most C programs make extensive use of all three.
+        </p><br>
+        <h2>Data Types</h2>
+        <p>
+            The type system in C is static and weakly typed, which makes it similar to the type system of ALGOL descendants such as Pascal. There are built-in types for integers of various sizes, both signed and unsigned, floating-point numbers, and enumerated types (enum). Integer type char is often used for single-byte characters. C99 added a Boolean data type. There are also derived types including arrays, pointers, records (struct), and unions (union).
+
+            C is often used in low-level systems programming where escapes from the type system may be necessary. The compiler attempts to ensure type correctness of most expressions, but the programmer can override the checks in various ways, either by using a type cast to explicitly convert a value from one type to another, or by using pointers or unions to reinterpret the underlying bits of a data object in some other way.
+        </p><br>
+        <h2>Pointers</h2>
+        <p>
+            C supports pointers, which store memory addresses of objects or functions. They can be dereferenced to access data or invoke functions and manipulated using assignment or arithmetic, automatically scaled by data type size.
+
+            Pointers are essential for text strings, dynamic memory allocation, and data structures like trees. Function pointers enable higher-order functions, dispatch tables, and callbacks. Multi-level pointers help manage arrays and complex structures.
+
+            A null pointer explicitly points to no valid location, useful for indicating special cases. Dereferencing it causes undefined behavior, often a segmentation fault. Void pointers (void *) serve as generic pointers but cannot be dereferenced or used in arithmetic.
+
+            Misuse of pointers can lead to security risks, including dangling or wild pointers, and undefined behavior. While C allows flexible pointer manipulation, compilers offer checks to mitigate errors.
+        </p><br>
+    </article>
+</div>
+
+<div class="flex flex-row">
+    <h2>Try coding yourself!</h2>
+    <button onclick="run_code()" type="button" class="run-button" id="runButton">&#9658; Run</button>
+    <input type="text" id="language" class="meta" value="c">
+</div>
+<div class="textarea-container">
+    <textarea
+            class="textarea-input"
+            name="message"
+            id="code"
+            rows="2"
+            oninput="this.parentNode.dataset.clonedVal = this.value"
+            placeholder="Enter your code..."
+            required></textarea></div>
+<h2>Output:</h2>
+<pre id="output">Results will appear here...</pre><br>
+
+<div class="flex w-full">
+    <a href="../java" class="ml 0">&larr;  Java</a>
+    <div class="flex-grow"></div>
+    <a href="../cshrp" class="mr 0">C#  &rarr;</a>
+</div>
+
+</body>
+</html>

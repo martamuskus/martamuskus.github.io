@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<!--info podstawowe i do rozwiniecia historia-->
+
+<html lang="pl">
+<head>
+    <title>C#</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.min.css" rel="stylesheet">
+    <link href="output.min.css" rel="stylesheet">
+    <script src="scripts.js"></script>	
+</head>
+
+<body class="body_margin">
+
+<div class="flex flex-row">
+    <div class="ml 0 flex flex-row">
+        <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" class="ml 0"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/256px-Logo_C_sharp.svg.png" alt="c" width="100" height="100"></a>
+        <h1 class="h1_em container justfy-left">C Sharp</h1>
+    </div>
+    <div class="flex-grow"></div>
+    <a href="../../" class="mr 0 text-xl">&#127968;</a>
+</div>
+
+<details>
+    <summary>history</summary>
+    <p class="bg-gray-100"> During the development of the .NET Framework, Microsoft initially used Simple Managed C (SMC) for its class libraries. In 1999, Anders Hejlsberg led the creation of a new language called COOL ("C-like Object-Oriented Language"), designed to improve upon existing languages. However, due to trademark concerns, Microsoft renamed it C# before the .NET public announcement in 2000, after which the class libraries and ASP.NET runtime were ported to C#.
+
+        Hejlsberg, C#’s principal designer and lead architect, had previously worked on Turbo Pascal, Delphi, and Visual J++. He shaped C# with the goal of addressing common issues in major programming languages like C++, Java, and Delphi. While Java's creators, James Gosling and Bill Joy, dismissed C# as an imitation of Java, Hejlsberg argued that it was closer to C++ in design.
+
+        Since the release of C# 2.0 in 2005, the language has evolved independently from Java, diverging significantly in features and design philosophy. One of the first major differences appeared in their implementation of generics—C# uses reification, enabling full generic types at runtime. Additionally, C# has incorporated functional programming features, culminating in the introduction of LINQ with C# 3.0. Features like lambda expressions, extension methods, and anonymous types have made C# more expressive, reducing boilerplate code and improving maintainability.
+
+        C# briefly had a mascot named Andy, inspired by Anders Hejlsberg, but it was retired in 2004. The language was standardized under ISO/IEC 23270 in 2003, revised in 2006, and further updated in 2018 to reflect its continued evolution.
+        <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"><br>Wikipedia</a>
+    </p>
+</details>
+<div class="flex flex-row-gap">
+    <div class="w-50">
+        <ol type="I" class="text-teal-600/100">
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Frameworks</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://dotnet.microsoft.com/en-us/apps/aspnet">ASP.NET Core</a></li>
+                    <li class="text-teal-600/75"><a href="https://unity.com/">Unity</a></li>
+                    <li class="text-teal-600/75"><a href="https://learn.microsoft.com/en-us/ef/">Entity Framework Core</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Libraries</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://github.com/DapperLib/Dapper">Dapper</a></li>
+                    <li class="text-teal-600/75"><a href="https://serilog.net/">Serilog</a></li>
+                    <li class="text-teal-600/75"><a href="https://github.com/devlooped/moq">Moq</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Tools</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://www.jetbrains.com/rider/">Rider</a></li>
+                    <li class="text-teal-600/75"><a href="https://github.com/dotnet/BenchmarkDotNet">BenchmarkDotNet</a></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <article>
+        <h1>Basic overview</h1>
+        <h2>Synthax</h2>
+        <p>
+            The core syntax of the C# language is similar to that of other C-style languages such as C, Objective-C, C++ and Java, particularly:
+
+            <br>1. Semicolons are used to denote the end of a statement.
+            <br>2. Curly brackets are used to group statements. Statements are commonly grouped into methods (functions), methods into classes, and classes into namespaces.
+            <br>3. Variables are assigned using an equals sign, but compared using two consecutive equals signs.
+            <br>4. Square brackets are used with arrays, both to declare them and to get a value at a given index in one of them.
+            "class", "int" and "void" are used to define large-scale (usually main) program functions in scripts most of the time in C-style computer programming languages.
+        </p><br>
+        <h2>Typing</h2>
+        <p>
+            C# supports strongly, implicitly typed variable declarations with the keyword var, and implicitly typed arrays with the keyword new[] followed by a collection initializer.
+            Its type system is split into two families: Value types, like the built-in numeric types and user-defined structs, which are automatically handed over as copies when used as parameters, and reference types, including arrays, instances of classes, and strings, which only hand over a pointer to the respective object. Due to their special handling of the equality operator and their immutability, strings will nevertheless behave as if they were values, for all practical purposes. You can even use them as case labels. Where necessary, value types will be boxed automatically.
+
+            C# supports a strict Boolean data type, bool. Statements that take conditions, such as while and if, require an expression of a type that implements the true operator, such as the Boolean type. While C++ also has a Boolean type, it can be freely converted to and from integers, and expressions such as if (a) require only that a is convertible to bool, allowing a to be an int, or a pointer. C# disallows this "integer meaning true or false" approach, on the grounds that forcing programmers to use expressions that return exactly bool can prevent certain types of programming mistakes such as if (a = b) (use of assignment = instead of equality ==).
+
+            C# is more type safe than C++. The only implicit conversions by default are those that are considered safe, such as widening of integers. This is enforced at compile-time, during JIT, and, in some cases, at runtime. No implicit conversions occur between Booleans and integers, nor between enumeration members and integers (except for literal 0, which can be implicitly converted to any enumerated type). Any user-defined conversion must be explicitly marked as explicit or implicit, unlike C++ copy constructors and conversion operators, which are both implicit by default.
+
+            C# has explicit support for covariance and contravariance in generic types, unlike C++ which has some degree of support for contravariance simply through the semantics of return types on virtual methods.
+
+            Enumeration members are placed in their own scope.
+
+            The C# language does not allow for global variables or functions. All methods and members must be declared within classes. Static members of public classes can substitute for global variables and functions.
+
+            Local variables cannot shadow variables of the enclosing block, unlike C and C++, but may shadow type-level names.
+        </p><br>
+        <h2>Language Integrated Query (LINQ)</h2>
+        <p>
+            C# has the ability to utilize LINQ through the .NET Framework. A developer can query a variety of data sources, provided the IEnumerable &lt;T&gt; interface is implemented on the object. This includes XML documents, an ADO.NET dataset, and SQL databases.
+
+            Using LINQ in C# brings advantages like IntelliSense support, strong filtering capabilities, type safety with compile error checking ability, and consistency for querying data over a variety of sources. There are several different language structures that can be utilized with C# and LINQ and they are query expressions, lambda expressions, anonymous types, implicitly typed variables, extension methods, and object initializers.
+
+            LINQ has two syntaxes: query syntax and method syntax. However, the compiler always converts the query syntax to method syntax at compile time
+        </p><br>
+    </article>
+</div>
+
+<div class="flex w-full">
+    <a href="../c" class="ml 0">&larr;  C</a>
+    <div class="flex-grow"></div>
+    <a href="../javascript" class="mr 0">Java Script  &rarr;</a>
+</div>
+
+</body>
+</html>

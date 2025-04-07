@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<!--info podstawowe i do rozwiniecia historia-->
+
+<html lang="pl">
+<head>
+    <title>JavaScript</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.min.css" rel="stylesheet">
+    <link href="output.min.css" rel="stylesheet">
+    <script src="scripts.js"></script>
+</head>
+
+<body class="body_margin">
+
+<div class="flex flex-row">
+    <div class="ml 0 flex flex-row">
+        <a href="https://en.wikipedia.org/wiki/JavaScript"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/225px-Unofficial_JavaScript_logo_2.svg.png" alt="js" width="60" height="60"></a>
+        <h1 class="h1_em container justfy-left">JavaScript</h1>
+    </div>
+    <div class="flex-grow"></div>
+    <a href="../../" class="mr 0 text-xl">&#127968;</a>
+</div>
+
+<details>
+    <summary>history</summary>
+    <p class="bg-gray-100"> The first popular web browser with a graphical user interface, Mosaic, was released in 1993. Accessible to non-technical people, it played a prominent role in the rapid growth of the early World Wide Web. The lead developers of Mosaic then founded the Netscape corporation, which released a more polished browser, Netscape Navigator, in 1994. This quickly became the most-used.
+
+        During these formative years of the Web, web pages could only be static, lacking the capability for dynamic behavior after the page was loaded in the browser. There was a desire in the flourishing web development scene to remove this limitation, so in 1995, Netscape decided to add a programming language to Navigator. They pursued two routes to achieve this: collaborating with Sun Microsystems to embed the Java language, while also hiring Brendan Eich to embed the Scheme language.
+
+        The goal was a "language for the masses", "to help nonprogrammers create dynamic, interactive Web sites". Netscape management soon decided that the best option was for Eich to devise a new language, with syntax similar to Java and less like Scheme or other extant scripting languages. Although the new language and its interpreter implementation were called LiveScript when first shipped as part of a Navigator beta in September 1995, the name was changed to JavaScript for the official release in December.
+
+        The choice of the JavaScript name has caused confusion, implying that it is directly related to Java. At the time, the dot-com boom had begun and Java was a popular new language, so Eich considered the JavaScript name a marketing ploy by Netscape.
+        <a href="https://en.wikipedia.org/wiki/JavaScript"><br>Wikipedia</a>
+    </p>
+</details>
+<div class="flex flex-row-gap">
+    <div class="w-50">
+        <ol type="I" class="text-teal-600/100">
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Frameworks</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://react.dev/">React</a></li>
+                    <li class="text-teal-600/75"><a href="https://vuejs.org/">Vue.js</a></li>
+                    <li class="text-teal-600/75"><a href="https://angular.dev/">Angular</a></li>
+                    <li class="text-teal-600/75"><a href="https://svelte.dev/">Svelte</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Libraries</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://lodash.com/">Lodash</a></li>
+                    <li class="text-teal-600/75"><a href="https://d3js.org/">D3.js</a></li>
+                    <li class="text-teal-600/75"><a href="https://threejs.org/">Three.js</a></li>
+                    <li class="text-teal-600/75"><a href="https://www.chartjs.org/">Chart.js</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Tools</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://webpack.js.org/">Webpack</a></li>
+                    <li class="text-teal-600/75"><a href="https://vite.dev/">Vite</a></li>
+                    <li class="text-teal-600/75"><a href="https://eslint.org/">ESLint</a></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <article>
+        <h1>Basic overview</h1>
+        <h2>JavaScript Engine</h2>
+        <p>
+            A JavaScript engine is a software component that executes JavaScript code. The first JavaScript engines were mere interpreters, but all relevant modern engines use just-in-time compilation for improved performance.
+
+            JavaScript engines are typically developed by web browser vendors, and every major browser has one. In a browser, the JavaScript engine runs in concert with the rendering engine via the Document Object Model and Web IDL bindings. However, the use of JavaScript engines is not limited to browsers; for example, the V8 engine is a core component of the Node.js runtime system.
+
+            Since ECMAScript is the standardized specification of JavaScript, ECMAScript engine is another name for these implementations. With the advent of WebAssembly, some engines can also execute this code in the same sandbox as regular JavaScript code.
+        </p><br>
+        <h2>Weak typing</h2>
+        <p>
+            JavaScript is weakly typed, which means certain types are implicitly cast depending on the operation used.
+
+            The binary + operator casts both operands to a string unless both operands are numbers. This is because the addition operator doubles as a concatenation operator
+            The binary - operator always casts both operands to a number
+            Both unary operators (+, -) always cast the operand to a number. However, + always casts to Number (binary64) while - preserves BigInt (integer)
+            Values are cast to strings like the following:
+
+            Strings are left as-is
+            Numbers are converted to their string representation
+            Arrays have their elements cast to strings after which they are joined by commas (,)
+            Other objects are converted to the string [object Object] where Object is the name of the constructor of the object
+            Values are cast to numbers by casting to strings and then casting the strings to numbers. These processes can be modified by defining toString and valueOf functions on the prototype for string and number casting respectively.
+
+            JavaScript has received criticism for the way it implements these conversions as the complexity of the rules can be mistaken for inconsistency. For example, when adding a number to a string, the number will be cast to a string before performing concatenation, but when subtracting a number from a string, the string is cast to a number before performing subtraction.
+        </p><br>
+        <h2>Variables</h2>
+        <p>
+            Variables in standard JavaScript have no type attached, so any value (each value has a type) can be stored in any variable. Starting with ES6, the 6th version of the language, variables could be declared with var for function scoped variables, and let or const which are for block level variables. Before ES6, variables could only be declared with a var statement. Values assigned to variables declared with const cannot be changed, but their properties can. var should no longer be used since let and const are supported by modern browsers. A variable's identifier must start with a letter, underscore (_), or dollar sign ($), while subsequent characters can also be digits (0-9). JavaScript is case sensitive, so the uppercase characters "A" through "Z" are different from the lowercase characters "a" through "z".
+        </p><br>
+    </article>
+</div>
+
+<div class="flex flex-row">
+    <h2>Try coding yourself!</h2>
+    <button onclick="run_code()" type="button" class="run-button" id="runButton">&#9658; Run</button>
+    <input type="text" id="language" class="meta" value="nodejs">
+</div>
+<div class="textarea-container">
+    <textarea
+            class="textarea-input"
+            name="message"
+            id="code"
+            rows="2"
+            oninput="this.parentNode.dataset.clonedVal = this.value"
+            placeholder="Enter your code..."
+            required></textarea></div>
+<h3>Output:</h3>
+<pre id="output">Results will appear here...</pre><br>
+
+<div class="flex w-full">
+    <a href="../cshrp" class="ml 0">&larr;  C#</a>
+    <div class="flex-grow"></div>
+    <a href="../go" class="mr 0">Go  &rarr;</a>
+</div>
+
+</body>
+</html>

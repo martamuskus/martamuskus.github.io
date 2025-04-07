@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<!--info podstawowe i do rozwiniecia historia-->
+
+<html lang="pl">
+<head>
+    <title>C++</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.min.css" rel="stylesheet">
+    <link href="output.min.css" rel="stylesheet">
+    <script src="scripts.js"></script>	
+</head>
+
+<body class="body_margin">
+
+<div class="flex flex-row">
+    <div class="ml 0 flex flex-row">
+        <a href="https://en.wikipedia.org/wiki/C%2B%2B" class="ml 0"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png" alt="cpp" width="100" height="100"></a>
+        <h1 class="h1_em container justfy-left">C++</h1>
+    </div>
+    <div class="flex-grow"></div>
+    <a href="../../" class="mr 0 text-xl">&#127968;</a>
+</div>
+
+<details>
+    <summary>history</summary>
+    <p class="bg-gray-100"> In 1979, Bjarne Stroustrup began developing "C with Classes," inspired by Simula’s features and C’s efficiency. Working at AT&amp;T Bell Labs, he aimed to enhance C for distributed computing, incorporating elements from ALGOL 68, Ada, CLU, and ML.
+
+        By 1982, "C with Classes" evolved into C++, introducing virtual functions, overloading, references, type-safe memory management, and BCPL-style comments (//). Stroustrup also created the first C++ compiler, Cfront. In 1984, he implemented the first stream I/O library.
+
+        The first edition of The C++ Programming Language was published in 1985, followed by C++ 2.0 in 1989, adding multiple inheritance, abstract classes, and const member functions. In 1998, C++98 standardized the language, with minor updates in C++03.
+
+        C++11, released in 2011, brought major improvements, followed by C++14, C++17, and C++20. Stroustrup won the 2018 Draper Prize for his contributions. In 2022, C++ surpassed Java in the TIOBE index, ranking second after Python by 2024
+        <a href="https://en.wikipedia.org/wiki/C%2B%2B"><br>Wikipedia</a>
+    </p>
+</details>
+<div class="flex flex-row-gap">
+    <div class="w-50">
+        <ol type="I" class="text-teal-600/100">
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Frameworks</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://www.qt.io/">Qt</a></li>
+                    <li class="text-teal-600/75"><a href="https://pocoproject.org/">Poco</a></li>
+                    <li class="text-teal-600/75"><a href="https://www.boost.org/">Boost</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Libraries</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://cpp0x.pl/kursy/Kurs-STL-C++/114">STL</a></li>
+                    <li class="text-teal-600/75"><a href="https://opencv.org/">OpenCV</a></li>
+                    <li class="text-teal-600/75"><a href="https://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Tools</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://cmake.org/">CMake</a></li>
+                    <li class="text-teal-600/75"><a href="https://google.github.io/googletest/">GTest</a></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <article>
+        <h1>Basic overview</h1>
+        <h2>Templates</h2>
+        <p>
+            C++ templates enable generic programming. C++ supports function, class, alias, and variable templates. Templates may be parameterized by types, compile-time constants, and other templates. Templates are implemented by instantiation at compile-time. To instantiate a template, compilers substitute specific arguments for a template's parameters to generate a concrete function or class instance. Some substitutions are not possible; these are eliminated by an overload resolution policy described by the phrase "Substitution failure is not an error" (SFINAE). Templates are a powerful tool that can be used for generic programming, template metaprogramming, and code optimization, but this power implies a cost. Template use may increase object code size, because each template instantiation produces a copy of the template code: one for each set of template arguments, however, this is the same or smaller amount of code that would be generated if the code were written by hand. This is in contrast to run-time generics seen in other languages (e.g., Java) where at compile-time the type is erased and a single template body is preserved.
+        </p><br>
+        <h2>Object Oriented Programming</h2>
+        <p>
+            C++ extends C with object-oriented programming (OOP) features, including classes that support abstraction, encapsulation, inheritance, and polymorphism. A key distinction is deterministic destructors, enabling the Resource Acquisition is Initialization (RAII) concept.
+
+            <br><strong>Encapsulation</strong>
+            <br>Encapsulation hides implementation details, ensuring controlled data access. C++ enforces this via public, protected, and private access specifiers. While C++ supports strict encapsulation through member and friend functions, it also allows more flexible modular programming. Best practices recommend keeping data private or protected while exposing only a minimal public interface.
+
+            <br><strong>Inheritance</strong>
+            <br>Inheritance enables a class to acquire properties from another. It can be public, protected, or private, with public inheritance being the most common. Virtual inheritance prevents duplication in multiple inheritance scenarios. Unlike C# or Java, which allow multiple interface inheritance, C++ supports full multiple inheritance. Abstract base classes (ABCs) with pure virtual functions serve a similar role to interfaces in other languages.
+        </p><br>
+        <h2>Compatibility with C</h2>
+        <p>
+            C++ is often considered to be a superset of C but this is not strictly true. Most C code can easily be made to compile correctly in C++ but there are a few differences that cause some valid C code to be invalid or behave differently in C++. For example, C allows implicit conversion from void* to other pointer types but C++ does not (for type safety reasons). Also, C++ defines many new keywords, such as new and class, which may be used as identifiers (for example, variable names) in a C program.
+
+            Some incompatibilities have been removed by the 1999 revision of the C standard (C99), which now supports C++ features such as line comments (//) and declarations mixed with code. On the other hand, C99 introduced a number of new features that C++ did not support that were incompatible or redundant in C++, such as variable-length arrays, native complex-number types (however, the std::complex class in the C++ standard library provides similar functionality, although not code-compatible), designated initializers, compound literals, and the restrict keyword. Some of the C99-introduced features were included in the subsequent version of the C++ standard, C++11 (out of those which were not redundant). However, the C++11 standard introduces new incompatibilities, such as disallowing assignment of a string literal to a character pointer, which remains valid C.
+
+            To intermix C and C++ code, any function declaration or definition that is to be called from/used both in C and C++ must be declared with C linkage by placing it within an extern "C" {/*...*/} block. Such a function may not rely on features depending on name mangling (i.e., function overloading).
+        </p><br>
+    </article>
+</div><br>
+
+<div class="flex flex-row">
+    <h2>Try coding yourself!</h2>
+    <button onclick="run_code()" type="button" class="run-button" id="runButton">&#9658; Run</button>
+    <input type="text" id="language" class="meta" value="cpp">
+</div>
+<div class="textarea-container">
+    <textarea
+            class="textarea-input"
+            name="message"
+            id="code"
+            rows="2"
+            oninput="this.parentNode.dataset.clonedVal = this.value"
+            placeholder="Enter your code..."
+            required></textarea></div>
+<h3>Output:</h3>
+<pre id="output">Results will appear here...</pre><br>
+
+<div class="flex w-full">
+    <a href="../python" class="ml 0">&larr;  Python</a>
+    <div class="flex-grow"></div>
+    <a href="../java" class="mr 0">Java  &rarr;</a>
+</div>
+</body>
+</html>

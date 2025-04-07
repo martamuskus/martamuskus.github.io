@@ -1,0 +1,6 @@
+/*combining scss and tailwind*/
+
+@import "../output.min.css";
+@import "../styles.min.css";
+@import "../output.css"
+

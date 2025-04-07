@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<!--info podstawowe i do rozwiniecia historia-->
+
+<html lang="pl">
+<head>
+    <title>Visual Basic</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.min.css" rel="stylesheet">
+    <link href="output.min.css" rel="stylesheet">
+    <script src="scripts.js"></script>
+</head>
+
+<body class="body_margin">
+<div class="flex flex-row">
+  <div class="ml 0 flex flex-row">
+    <a href="https://en.wikipedia.org/wiki/Visual_Basic_(classic)" class="ml 0"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/VB.NET_Logo.svg/800px-VB.NET_Logo.svg.png" alt="delphi" width="100" height="100"></a>
+    <h1 class="h1_em container justfy-left">Visual Basic</h1>
+  </div>
+  <div class="flex-grow"></div>
+    <a href="../../" class="mr 0 text-xl">&#127968;</a>
+</div>
+
+<details>
+    <summary>history</summary>
+    <p class="bg-gray-100"> BYTE reported in 1989 that, based on its experience with Macintosh software development, Microsoft "wants to provide a development environment that mimics the delivery environment". BASIC's string handling was preferable to C, the company's Greg Lobdell said, when developing the mostly transaction-processing applications Microsoft expected object-oriented programming tools to create. Visual Basic 1.0 was introduced in 1991. The drag and drop design for creating the user interface is derived from a prototype form generator developed by Alan Cooper and his company called Tripod. Microsoft contracted with Cooper and his associates to develop Tripod into a programmable form system for Windows 3.0, under the code name Ruby (no relation to the later Ruby programming language). Tripod did not include a programming language at all. Microsoft decided to combine Ruby with the Basic language to create Visual Basic. The Ruby interface generator provided the "visual" part of Visual Basic, and this was combined with the "EB" Embedded BASIC engine designed for Microsoft's abandoned "Omega" database system. Ruby also provided the ability to load dynamic link libraries containing additional controls (then called "gizmos"), which later became the VBX interface
+        <a href="https://en.wikipedia.org/wiki/Visual_Basic_(classic)"><br>Wikipedia</a>
+    </p>
+</details>
+<div class="flex flex-row">
+    <div class="w-50">
+        <ol type="I" class="text-teal-600/100">
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Frameworks</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework">.NET Framework</a></li>
+                    <li class="text-teal-600/75"><a href="https://github.com/dotnet/winforms">WinFroms</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Libraries</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://adodb.org/">ADODB</a></li>
+                    <li class="text-teal-600/75"><a href="https://learn.microsoft.com/pl-pl/dotnet/api/microsoft.office.interop.excel.module?view=excel-pia">Microsoft.Office.Interop</a></li>
+                </ul>
+            </li>
+            <li class="text-teal-600/100">
+                <div class="text-teal-600/100"><strong>Tools</strong></div>
+                <ul>
+                    <li class="text-teal-600/75"><a href="https://visualstudio.microsoft.com/">Visual Studio</a></li>
+                    <li class="text-teal-600/75"><a href="https://learn.microsoft.com/en-us/windows/win32/cossdk/component-services-portal">COM+</a></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <article>
+        <h1>Basic overview</h1>
+        <h2>Objectives</h2>
+        <p>
+            Visual Basic is designed to streamline software development, particularly for applications with graphical user interfaces (GUIs). It provides an intuitive environment that allows developers to build interactive programs efficiently. The language emphasizes ease of use, integrating tools for quick interface design and built-in support for managing data and external components. Unlike many traditional languages, it follows an event-driven model, where the flow of execution is guided by user actions rather than a predefined sequence of commands. Additionally, it offers mechanisms to extend functionality by interacting with system-level features, making it adaptable for a wide range of applications.
+        </p><br>
+        <h2>Synthax</h2>
+        <p>
+            Structurally, Visual Basic moves away from the traditional use of line numbers and organizes code into named blocks such as Sub...End Sub and Function...End Function, improving readability and maintainability. Statements do not require explicit terminators beyond a newline, though multi-line statements can be created using an underscore (_). Commenting is straightforward, using an apostrophe ('). Looping structures are clearly defined with constructs like Do...Loop, While...End While, and For...Next. The language does not permit chained assignments (A = B = C), as it evaluates B = C as a Boolean expression and assigns the result to A. Another unique feature of Visual Basic is its treatment of Boolean values: True is represented by -1 rather than 1, which aligns with early Microsoft BASIC implementations and follows the two’s complement representation, making bitwise operations like And, Or, Xor, and Not more intuitive.
+        </p><br>
+        <h2>Arrays and Variables</h2>
+       <p>
+           Visual Basic also offers flexibility in array handling, allowing the lower bound to be explicitly set instead of defaulting to 0, as seen in many other languages. However, using the Option Base statement to change the default lower bound is discouraged due to potential confusion in reading code. The language is deeply integrated with Windows, relying on the Component Object Model (COM) for handling strings (BSTR) and arrays (SAFEARRAY). It also employs banker’s rounding as the default for rounding floating-point numbers to integers and automatically promotes integer values to floating-point types in division operations. For integer division with truncation, a dedicated \ operator is provided. Visual Basic's flexible typing system allows undeclared variables to act as variants by default, but stricter type enforcement can be enabled using Option Explicit.
+       </p><br>
+    </article>
+</div>
+
+<div class="flex w-full">
+    <a href="../go" class="ml 0">&larr;  Go</a>
+    <div class="flex-grow"></div>
+    <a href="../delphi" class="mr 0">Delphi  &rarr;</a>
+</div>
+
+</body>
+</html>
